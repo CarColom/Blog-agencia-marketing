@@ -1,0 +1,72 @@
+using System;
+
+class Persona
+{
+    // Atributos
+    private string nombre;
+    private int edad;
+
+    // Propiedades
+    public string Nombre
+    {
+        get { return nombre; }
+        set { nombre = value; }
+    }
+
+    public int Edad
+    {
+        get { return edad; }
+        set { edad = value; }
+    }
+
+    // Método para imprimir
+    public void Imprimir()
+    {
+        Console.WriteLine($"Nombre: {Nombre}, Edad: {Edad}");
+    }
+}
+
+class Empleado : Persona
+{
+    // Atributo adicional
+    private double sueldo;
+
+    // Propiedad del sueldo
+    public double Sueldo
+    {
+        get { return sueldo; }
+        set { sueldo = value; }
+    }
+
+    // Método para imprimir el sueldo
+    public void ImprimirSueldo()
+    {
+        Console.WriteLine($"Sueldo: {Sueldo}");
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        // Crear objeto de la clase Persona
+        Persona persona = new Persona();
+        persona.Nombre = "Juan";
+        persona.Edad = 25;
+
+        // Llamar a los métodos y propiedades de Persona
+        persona.Imprimir();
+
+        // Crear objeto de la clase Empleado
+        Empleado empleado = new Empleado();
+        empleado.Nombre = "Maria";
+        empleado.Edad = 30;
+        empleado.Sueldo = 50000;
+
+        // Llamar a los métodos y propiedades de Persona y Empleado
+        empleado.Imprimir();
+        empleado.ImprimirSueldo();
+
+        Console.ReadLine();
+    }
+}
